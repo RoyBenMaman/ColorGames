@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy – ColorGames</title>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p><strong>App Name:</strong> Learn Colors for Kids in English</p>
+  <p><strong>Package Name:</strong> com.roy.color</p>
+  <p><strong>Version:</strong> 1.0</p>
+
+  <h2>Data Collection</h2>
+  <p>This app does <em>not</em> collect, store, or share any personal data from users. It works entirely offline and does not use internet, camera, microphone, location, identifiers, or any analytics.</p>
+
+  <h2>Advertising & Third Parties</h2>
+  <p>The app does not include ads or any third-party services.</p>
+
+  <h2>Contact</h2>
+  <p>If you have any questions, contact the developer at <a href="mailto:tamarm.benmaman@gmail.com">tamarm.benmaman@gmail.com</a>.</p>
+</body>
+</html>
