@@ -51,7 +51,8 @@ class MainActivity : ComponentActivity(), TextToSpeech.OnInitListener {
 fun ColorQuizWithSpeechAndRepeat(tts: TextToSpeech?, isTtsReady: Boolean) {
     val colorNames = listOf(
         "Red", "Blue", "Green", "Yellow", "Purple",
-        "Orange", "Pink", "Brown", "Gray", "Cyan"
+        "Orange", "Pink", "Brown", "Gray", "Cyan",
+        "Magenta", "Teal", "Indigo", "Olive"  // Added Indigo and Olive
     )
 
     val colorMap = mapOf(
@@ -64,7 +65,11 @@ fun ColorQuizWithSpeechAndRepeat(tts: TextToSpeech?, isTtsReady: Boolean) {
         "Pink" to Color(0xFFFFC0CB),
         "Brown" to Color(0xFFA52A2A),
         "Gray" to Color.Gray,
-        "Cyan" to Color.Cyan
+        "Cyan" to Color.Cyan,
+        "Magenta" to Color.Magenta,
+        "Teal" to Color(0xFF008080),
+        "Indigo" to Color(0xFF4B0082),  // Added Indigo
+        "Olive" to Color(0xFF808000)    // Added Olive
     )
 
     var currentColor by remember { mutableStateOf(colorNames.random()) }

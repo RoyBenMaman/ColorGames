@@ -15,6 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import com.roy.color.MainActivity
 import kotlinx.coroutines.delay
+import androidx.compose.animation.core.*
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
 
 class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +31,10 @@ class SplashActivity : ComponentActivity() {
 @Composable
 fun SplashScreen() {
     val context = LocalContext.current
+    var isVisible by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
+        isVisible = true
         delay(2500L)
         context.startActivity(Intent(context, MainActivity::class.java))
         (context as? ComponentActivity)?.finish()
@@ -44,20 +49,27 @@ fun SplashScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "🎨 Color Fun!",
-                fontSize = 36.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color(0xFF3B3B3B)
-            )
+            AnimatedVisibility(
+                visible = isVisible,
+                enter = fadeIn(animationSpec = tween(durationMillis = 1000))
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "🎨 Color Fun!",
+                        fontSize = 36.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF3B3B3B)
+                    )
 
-            Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
-            Text(
-                text = "Learn colors in English",
-                fontSize = 18.sp,
-                color = Color(0xFF4B5563)
-            )
+                    Text(
+                        text = "Learn colors in English",
+                        fontSize = 18.sp,
+                        color = Color(0xFF4B5563)
+                    )
+                }
+            }
         }
     }
 }
